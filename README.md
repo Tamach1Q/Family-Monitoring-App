@@ -64,6 +64,35 @@ npm run build
 npm run preview
 ```
 
+## Docker
+
+### Build Image
+
+```bash
+docker build -t family-monitoring-app .
+```
+
+### Run Container
+
+```bash
+docker run --rm -p 8080:80 family-monitoring-app
+```
+
+ブラウザで `http://localhost:8080` を開くと確認できます。  
+Nginx で静的配信し、React Router のパスは `index.html` にフォールバックする設定を入れています。
+
+### Run with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+バックグラウンドで起動する場合:
+
+```bash
+docker compose up --build -d
+```
+
 ## Available Routes
 
 - `/home` : 今日の活動の概要
@@ -96,6 +125,7 @@ src/
 - データは `src/data` のモックを利用しています
 - 実際の通知配信、GPS、ロボット制御、認証機能は含みません
 - ルートマップは API 非接続のモック表示です
+- Docker 利用時は Nginx コンテナ上で静的配信します
 
 ## Verification
 
