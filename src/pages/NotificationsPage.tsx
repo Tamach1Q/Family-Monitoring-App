@@ -1,7 +1,4 @@
-import { InsightBanner } from "../components/cards/InsightBanner";
-import { ScreenContainer } from "../components/layout/ScreenContainer";
 import { NotificationItem } from "../components/list/NotificationItem";
-import { SectionHeader } from "../components/SectionHeader";
 import {
   notificationOverview,
   notifications,
@@ -10,31 +7,42 @@ import {
 
 export function NotificationsPage() {
   return (
-    <ScreenContainer
-      eyebrow="Notifications"
-      title="通知"
-      subtitle="不安を煽らず、必要な変化だけを落ち着いて確認できる一覧です。"
-    >
-      <InsightBanner icon="notifications" title={notificationOverview.title} body={notificationOverview.body} tone="warm" />
+    <div className="space-y-8 pt-4">
+      <div className="flex flex-col gap-1">
+        <h1 className="text-3xl font-bold tracking-tight text-text-strong">通知</h1>
+        <p className="text-text-muted">今日のRovyの様子を確認しましょう</p>
+      </div>
 
-      <section className="space-y-3">
-        <SectionHeader title="最近のアクティビティ" subtitle="散歩の開始や帰宅など、家族が知りたい流れだけをまとめています。" />
-        {notifications.map((notification) => (
-          <NotificationItem key={notification.id} notification={notification} />
-        ))}
+      <section className="flex items-start gap-4 rounded-2xl bg-[#ffdbce]/40 p-6">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fda684]">
+          <span className="material-symbols-outlined icon-filled text-[#773a1f]">info</span>
+        </div>
+        <div className="space-y-1">
+          <h2 className="text-lg font-bold text-[#773a1f]">{notificationOverview.title}</h2>
+          <p className="text-[#72351b]">{notificationOverview.body}</p>
+        </div>
       </section>
 
-      <section className="panel overflow-hidden">
+      <section className="space-y-4">
+        <h2 className="px-1 text-xl font-semibold text-text-strong">最近のアクティビティ</h2>
+        <div className="space-y-3">
+          {notifications.map((notification) => (
+            <NotificationItem key={notification.id} notification={notification} />
+          ))}
+        </div>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl bg-white shadow-sm">
         <div className="border-b border-outline/60 px-6 py-5">
-          <SectionHeader title="設定" subtitle="通知量や共有相手を、必要に応じてやさしく調整できます。" />
+          <h2 className="text-xl font-semibold text-text-strong">設定</h2>
         </div>
 
         <div className="divide-y divide-outline/60">
           {notificationSettings.map((setting) => (
             <div key={setting.id} className="flex items-center justify-between gap-4 px-6 py-5">
               <div className="flex min-w-0 items-start gap-4">
-                <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface-soft text-primary">
-                  <span className="material-symbols-rounded text-[20px]">{setting.icon}</span>
+                <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f2f4f3] text-text-muted">
+                  <span className="material-symbols-outlined text-[20px]">{setting.icon}</span>
                 </div>
                 <div className="min-w-0">
                   <p className="font-medium text-text-strong">{setting.title}</p>
@@ -45,17 +53,17 @@ export function NotificationsPage() {
               {setting.action === "toggle" ? (
                 <div
                   aria-hidden="true"
-                  className={`flex h-7 w-14 items-center rounded-full p-1 ${setting.enabled ? "bg-primary" : "bg-outline"}`}
+                  className={`flex h-6 w-12 items-center rounded-full px-1 ${setting.enabled ? "bg-primary" : "bg-outline"}`}
                 >
-                  <div className={`h-5 w-5 rounded-full bg-white shadow-sm ${setting.enabled ? "ml-auto" : ""}`} />
+                  <div className={`h-4 w-4 rounded-full bg-white ${setting.enabled ? "ml-auto" : ""}`} />
                 </div>
               ) : (
-                <span className="material-symbols-rounded text-[20px] text-text-muted">open_in_new</span>
+                <span className="material-symbols-outlined text-[20px] text-outline">open_in_new</span>
               )}
             </div>
           ))}
         </div>
       </section>
-    </ScreenContainer>
+    </div>
   );
 }

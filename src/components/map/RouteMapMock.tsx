@@ -4,8 +4,8 @@ interface RouteMapMockProps {
 
 export function RouteMapMock({ routeName }: RouteMapMockProps) {
   return (
-    <section className="panel overflow-hidden p-0">
-      <div className="relative h-[320px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.9),rgba(207,225,215,0.55)),linear-gradient(135deg,rgba(231,236,233,0.85),rgba(248,250,249,0.95))]">
+    <section className="relative h-[320px] w-full overflow-hidden rounded-2xl shadow-sm">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.92),rgba(207,225,215,0.55)),linear-gradient(135deg,rgba(231,236,233,0.9),rgba(248,250,249,0.98))]">
         <svg
           aria-hidden="true"
           className="absolute inset-0 h-full w-full"
@@ -38,18 +38,18 @@ export function RouteMapMock({ routeName }: RouteMapMockProps) {
           <circle cx="272" cy="228" fill="#ffffff" r="4" />
         </svg>
 
-        <div className="absolute left-4 top-4 rounded-full bg-white/88 px-4 py-2 shadow-card backdrop-blur">
+        <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-white/88 px-4 py-2 shadow-card backdrop-blur">
           <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+            <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
             <span className="text-sm font-medium text-text-strong">散歩完了</span>
           </div>
         </div>
+      </div>
 
-        <div className="absolute bottom-4 left-4 max-w-[75%] rounded-[24px] bg-white/90 px-4 py-4 shadow-card backdrop-blur">
-          <p className="section-label">ルート</p>
-          <p className="mt-2 font-headline text-xl font-semibold text-text-strong">{routeName}</p>
-          <p className="mt-1 text-sm text-text-muted">マップ API には接続せず、デモ用にやわらかく表示しています。</p>
-        </div>
+      <div className="absolute bottom-4 left-4 max-w-[75%] rounded-[24px] bg-white/90 px-4 py-4 shadow-card backdrop-blur">
+        <p className="section-label">ルート</p>
+        <p className="mt-2 font-headline text-xl font-semibold text-text-strong">{routeName}</p>
+        <p className="mt-1 text-sm text-text-muted">マップ API には接続せず、デモ用にやわらかく表示しています。</p>
       </div>
     </section>
   );
