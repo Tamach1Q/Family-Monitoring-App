@@ -1,0 +1,976 @@
+﻿<!-- Design System -->
+<!DOCTYPE html>
+
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(248, 250, 249, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#370e00",
+                        "surface-container-highest": "#e1e3e2",
+                        "surface-container": "#eceeed",
+                        "primary-container": "#88a096",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#091f19",
+                        "primary-fixed-dim": "#b3ccc1",
+                        "on-tertiary-fixed-variant": "#3b4a44",
+                        "secondary-fixed": "#ffdbce",
+                        "surface-tint": "#4c635a",
+                        "surface-bright": "#f8faf9",
+                        "on-secondary-container": "#773a1f",
+                        "on-tertiary-fixed": "#101e19",
+                        "primary": "#4c635a",
+                        "tertiary-fixed": "#d5e7de",
+                        "on-surface": "#191c1c",
+                        "secondary": "#8f4c30",
+                        "tertiary": "#52625b",
+                        "surface-dim": "#d8dada",
+                        "background": "#f8faf9",
+                        "primary-fixed": "#cfe8dd",
+                        "tertiary-container": "#8e9e96",
+                        "on-background": "#191c1c",
+                        "on-secondary-fixed-variant": "#72351b",
+                        "inverse-surface": "#2e3131",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb598",
+                        "secondary-container": "#fda684",
+                        "inverse-on-surface": "#eff1f0",
+                        "on-primary-container": "#21372f",
+                        "on-tertiary-container": "#263530",
+                        "outline-variant": "#c2c8c4",
+                        "surface-container-low": "#f2f4f3",
+                        "surface-container-high": "#e6e9e8",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#727875",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#354b43",
+                        "on-surface-variant": "#424845",
+                        "tertiary-fixed-dim": "#b9cac2",
+                        "surface-variant": "#e1e3e2",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b3ccc1",
+                        "surface": "#f8faf9"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="ユーザープロフィール" class="w-full h-auto" data-alt="Close up portrait of a smiling mature woman in her 60s with soft natural lighting and a warm domestic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLknC-l9LfACU8zqxExYy2dPIt8kAkixViH8g01acwUGlnCrHvyzXUSl8Ya4CqpXHfP7h62ZiHd5O5Wk0J0_6UVn1f4FtSnPNdVCwa3JHp86vphaYVZjkKZUXHRU5Ktywz3LB3oQ8hLW07DyPNJHotOzcr5Prrn6jJsCsLUcH4-BxXrJEeZGpyXhlmE9IarbfZyLXSg8A0iZn4sJgA8DxyCfE3fthr1vOQb3UX17ZAA5KoW0woUsh8kzACkWJXU_eSY2eKl72K_h_s"/>
+</div>
+<h1 class="text-[#4c635a] font-headline font-bold text-xl tracking-tight">Rovy Family</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e1e3e2] transition-colors">
+<span class="material-symbols-outlined text-[#424845]">settings</span>
+</button>
+</header>
+<main class="pt-20 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Welcome Section -->
+<section class="mt-4">
+<h2 class="font-headline text-2xl font-bold text-on-surface">お母さんの今日の活動</h2>
+<p class="text-on-surface-variant body-lg mt-1">今日も元気に過ごされています</p>
+</section>
+<!-- Main Status Card: Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-lg text-on-primary md:col-span-2 shadow-[0_12px_32px_rgba(76,99,90,0.12)]">
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<span class="text-xs font-bold uppercase tracking-wider opacity-80">今日のウォーキング</span>
+<h3 class="text-3xl font-headline font-bold">完了しました</h3>
+</div>
+<div class="bg-white/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">directions_run</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+<div>
+<p class="text-xs opacity-80">時間</p>
+<p class="text-xl font-bold font-headline">28 min</p>
+</div>
+<div>
+<p class="text-xs opacity-80">距離</p>
+<p class="text-xl font-bold font-headline">2.4 km</p>
+</div>
+<div>
+<p class="text-xs opacity-80">アクティビティ</p>
+<p class="text-xl font-bold font-headline">良好</p>
+</div>
+</div>
+</div>
+<!-- Rovy's Status Card -->
+<div class="bg-surface-container-low p-6 rounded-lg relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">Rovyのメッセージ</span>
+</div>
+<p class="text-on-surface font-medium leading-relaxed mb-4">「今日の公園ルートはとても楽しかったです！」</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#4c635a]"></div>
+<span class="text-xs font-semibold text-primary">Rovyは健康です</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]">sentiment_satisfied</span>
+</div>
+</div>
+<!-- Safety Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">見守りステータス</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span class="text-sm text-on-surface">位置情報を安全に記録</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm text-on-surface">転倒や異常は検知されず</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- 7-Day Activity Graph -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline font-bold text-lg">週間アクティビティ</h3>
+<span class="text-xs font-medium text-on-surface-variant">過去7日間</span>
+</div>
+<div class="flex items-end justify-between h-32 gap-2">
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[40%]"></div>
+<span class="text-[10px] text-on-surface-variant">月</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[60%]"></div>
+<span class="text-[10px] text-on-surface-variant">火</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[55%]"></div>
+<span class="text-[10px] text-on-surface-variant">水</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[85%]"></div>
+<span class="text-[10px] text-on-surface-variant">木</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[45%]"></div>
+<span class="text-[10px] text-on-surface-variant">金</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm h-[70%]"></div>
+<span class="text-[10px] text-on-surface-variant">土</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary rounded-t-sm h-[95%]"></div>
+<span class="text-[10px] font-bold text-primary">今日</span>
+</div>
+</div>
+</section>
+<!-- Contextual FAB -->
+<div class="fixed right-6 bottom-28 md:right-10 md:bottom-32">
+<button class="bg-secondary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[1.5rem] bg-[#f8faf9]/90 backdrop-blur-xl border-t border-[#424845]/10 shadow-[0_-4px_24px_rgba(25,28,28,0.04)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#88a096]/20 text-[#4c635a] rounded-[9999px] px-5 py-1.5 active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">ホーム</span>
+</a>
+<!-- Detail -->
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">詳細</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">履歴</span>
+</a>
+<!-- Notifications -->
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">通知</span>
+</a>
+</div>
+</nav>
+</body></html>
+
+
+<!-- ホーム / 今日のようす -->
+<!DOCTYPE html>
+
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rovy Family - Activity Record</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#370e00",
+              "surface-container-highest": "#e1e3e2",
+              "surface-container": "#eceeed",
+              "primary-container": "#88a096",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#091f19",
+              "primary-fixed-dim": "#b3ccc1",
+              "on-tertiary-fixed-variant": "#3b4a44",
+              "secondary-fixed": "#ffdbce",
+              "surface-tint": "#4c635a",
+              "surface-bright": "#f8faf9",
+              "on-secondary-container": "#773a1f",
+              "on-tertiary-fixed": "#101e19",
+              "primary": "#4c635a",
+              "tertiary-fixed": "#d5e7de",
+              "on-surface": "#191c1c",
+              "secondary": "#8f4c30",
+              "tertiary": "#52625b",
+              "surface-dim": "#d8dada",
+              "background": "#f8faf9",
+              "primary-fixed": "#cfe8dd",
+              "tertiary-container": "#8e9e96",
+              "on-background": "#191c1c",
+              "on-secondary-fixed-variant": "#72351b",
+              "inverse-surface": "#2e3131",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#ffb598",
+              "secondary-container": "#fda684",
+              "inverse-on-surface": "#eff1f0",
+              "on-primary-container": "#21372f",
+              "on-tertiary-container": "#263530",
+              "outline-variant": "#c2c8c4",
+              "surface-container-low": "#f2f4f3",
+              "surface-container-high": "#e6e9e8",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "outline": "#727875",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#354b43",
+              "on-tertiary-fixed-dim": "#b9cac2",
+              "surface-variant": "#e1e3e2",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b3ccc1",
+              "surface": "#f8faf9"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8faf9;
+      }
+      .headline-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="User Profile" data-alt="Close-up portrait of a smiling middle-aged Japanese woman in a cozy home setting with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnyyp8OUjoorONK05z3NRO4FFgd_94Oc_uz48e5IpyeBF-CfFrjTSG7Pd7sL66uLih_Z65dSZy_O-i13gAJExlYjj1dZ4urWqXzefu0cc0efBPw1a1tmjseMAwLLD4FP3iCx_Uv-qxGvcK8ggUj9xEIzU7OnI4Ob5zUAx0XzEWQcrrnaw78cEwPizy2rAeCprhVyWkqKtjVN5_7G6ey0gKtouC3Ziy_qOtHs-ILPiaBYgbriRuVKuv7qugNnF85qI7yDP721pWLdzB"/>
+</div>
+<span class="text-[#4c635a] font-bold text-xl tracking-tight headline-font">Rovy Family</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e1e3e2] transition-colors">
+<span class="material-symbols-outlined text-[#4c635a]">settings</span>
+</button>
+</header>
+<main class="mt-20 px-6 max-w-2xl mx-auto">
+<!-- Page Title & Insight -->
+<section class="mb-8">
+<h1 class="headline-font text-[1.75rem] font-medium text-on-surface mb-4">アクティビティ記録</h1>
+<div class="bg-secondary-fixed text-on-secondary-fixed-variant p-6 rounded-lg flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary scale-125 mt-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<p class="font-medium text-lg leading-snug">先週より少し多く歩けましたね！素晴らしい進歩です。</p>
+<p class="text-sm opacity-80 mt-1">健康的なリズムが整ってきています。</p>
+</div>
+</div>
+</section>
+<!-- Weekly Summary Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+<div class="bg-surface-container-low p-5 rounded-lg flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-primary mb-2">calendar_today</span>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">散歩日数</p>
+<p class="headline-font text-3xl font-bold text-primary">5/7 <span class="text-base font-normal">日</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-primary mb-2">distance</span>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">総距離</p>
+<p class="headline-font text-3xl font-bold text-primary">12.5 <span class="text-base font-normal">km</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg flex flex-col justify-between col-span-2 md:col-span-1 aspect-[2/1] md:aspect-auto">
+<span class="material-symbols-outlined text-primary mb-2">schedule</span>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">平均時間</p>
+<p class="headline-font text-3xl font-bold text-primary">25 <span class="text-base font-normal">分</span></p>
+</div>
+</div>
+</section>
+<!-- Consistency Calendar -->
+<section class="mb-10">
+<h2 class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-4">散歩の継続性</h2>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<span class="font-bold headline-font">2024年 5月</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-4 text-center">
+<span class="text-[0.75rem] text-on-surface-variant font-medium">月</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium">火</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium">水</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium">木</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium">金</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium">土</span>
+<span class="text-[0.75rem] text-on-surface-variant font-medium text-error">日</span>
+<div class="relative py-2"><span class="text-sm opacity-30">29</span></div>
+<div class="relative py-2"><span class="text-sm opacity-30">30</span></div>
+<div class="relative py-2 flex flex-col items-center">
+<span class="text-sm">1</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center">
+<span class="text-sm">2</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2"><span class="text-sm">3</span></div>
+<div class="relative py-2 flex flex-col items-center">
+<span class="text-sm">4</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center">
+<span class="text-sm text-error">5</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<!-- Current Week Highlighted Row -->
+<div class="relative py-2 flex flex-col items-center bg-primary/5 rounded-l-full">
+<span class="text-sm">6</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5">
+<span class="text-sm">7</span>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5">
+<span class="text-sm">8</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5">
+<span class="text-sm">9</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5">
+<span class="text-sm font-bold border-b-2 border-primary">10</span>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5">
+<span class="text-sm">11</span>
+</div>
+<div class="relative py-2 flex flex-col items-center bg-primary/5 rounded-r-full">
+<span class="text-sm text-error">12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Walks List -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-on-surface-variant text-sm font-bold uppercase tracking-widest">最近の記録</h2>
+<button class="text-primary text-sm font-bold">すべて見る</button>
+</div>
+<div class="space-y-3">
+<!-- Walk Item 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">directions_walk</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">5月10日 (金)</p>
+<p class="text-xs text-on-surface-variant">08:30 • 32分</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<p class="headline-font font-bold text-on-surface text-lg">2.4 km</p>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Walk Item 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">directions_walk</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">5月9日 (木)</p>
+<p class="text-xs text-on-surface-variant">17:15 • 28分</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<p class="headline-font font-bold text-on-surface text-lg">1.8 km</p>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Walk Item 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">directions_walk</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">5月8日 (水)</p>
+<p class="text-xs text-on-surface-variant">07:45 • 45分</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<p class="headline-font font-bold text-on-surface text-lg">3.2 km</p>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[1.5rem] bg-[#f8faf9]/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(25,28,28,0.04)] border-t border-[#424845]/10">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium mt-1">ホーム</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium mt-1">詳細</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#88a096]/20 text-[#4c635a] dark:text-[#b3ccc1] rounded-[9999px] px-5 py-1.5 transition-transform active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-bold mt-1">履歴</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium mt-1">通知</span>
+</a>
+</div>
+</nav>
+</body></html>
+
+
+<!-- 歩みの記録 -->
+<!DOCTYPE html>
+
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#370e00",
+              "surface-container-highest": "#e1e3e2",
+              "surface-container": "#eceeed",
+              "primary-container": "#88a096",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#091f19",
+              "primary-fixed-dim": "#b3ccc1",
+              "on-tertiary-fixed-variant": "#3b4a44",
+              "secondary-fixed": "#ffdbce",
+              "surface-tint": "#4c635a",
+              "surface-bright": "#f8faf9",
+              "on-secondary-container": "#773a1f",
+              "on-tertiary-fixed": "#101e19",
+              "primary": "#4c635a",
+              "tertiary-fixed": "#d5e7de",
+              "on-surface": "#191c1c",
+              "secondary": "#8f4c30",
+              "tertiary": "#52625b",
+              "surface-dim": "#d8dada",
+              "background": "#f8faf9",
+              "primary-fixed": "#cfe8dd",
+              "tertiary-container": "#8e9e96",
+              "on-background": "#191c1c",
+              "on-secondary-fixed-variant": "#72351b",
+              "inverse-surface": "#2e3131",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#ffb598",
+              "secondary-container": "#fda684",
+              "inverse-on-surface": "#eff1f0",
+              "on-primary-container": "#21372f",
+              "on-tertiary-container": "#263530",
+              "outline-variant": "#c2c8c4",
+              "surface-container-low": "#f2f4f3",
+              "surface-container-high": "#e6e9e8",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "outline": "#727875",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#354b43",
+              "on-surface-variant": "#424845",
+              "tertiary-fixed-dim": "#b9cac2",
+              "surface-variant": "#e1e3e2",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b3ccc1",
+              "surface": "#f8faf9"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<header class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="ユーザープロフィール" class="w-full h-full object-cover" data-alt="Soft focused portrait of a smiling elderly Japanese woman in a cozy living room with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9xKxddJFAc86mmpqk7EpA8KcJCF4lHwuSZscbJfRV_iqCkq7Ejz4WFShKpl3wuhcm4kHoOnqVY1gZZfvTgbxTtjmDZ9Y99_fl0XkkGqM_QECFdPsjTkllpa6aFRzNJRvMpO6q6UHexBXj4YhGXmmfYPt1FS3zZJl_Wc8Z0mnAXIpCsk0UyfDY4iaWxfLUuY1oJEXNswT0LppFf5OczOpCPe6o6GAlJ3riaBnGZVLh-jNnGL6gBxCEvtLO34lcLoIFTK_gr8HWAAxC"/>
+</div>
+<span class="text-[#4c635a] font-bold text-xl tracking-tight">Rovy Family</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e1e3e2] transition-colors active:opacity-70">
+<span class="material-symbols-outlined text-[#4c635a]">settings</span>
+</button>
+</header>
+<main class="pt-20 px-4 max-w-2xl mx-auto space-y-6">
+<section class="space-y-1">
+<h1 class="text-2xl font-bold tracking-tight text-on-surface">今日の散歩の詳細</h1>
+<p class="text-on-surface-variant body-lg">2024年5月24日 金曜日</p>
+</section>
+<section class="relative h-[320px] w-full rounded-lg overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Aerial topographic map of a lush green city park with a highlighted orange walking path weaving through trees and ponds" data-location="Tokyo Yoyogi Park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnaUZSU81vHCXZjqZYN5v_VgCTNzgdRigeYHR2MVFBhxAxps44uyOj-_J0rwZYdHCdV4CjJ59b--xnHD1qoAhtReeOsp_Uc2kSU_gyvZsC-2OCfVRrk-OaSCmKwUq_ILKwupFqDOv8aAaFcbd6m7sLuIObGkE3s1lZk6fAXIhyARbP5d-LVVZR7D9Iqteg2N2KRU12nLlKQTA4-HRVUUxneGzRMPSCjGcHNmMokAPCjzRh1NXV2wer9GNFe1WwWMGX9uIo8gDijz_7"/>
+</div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-sm font-medium text-on-surface">散歩完了</span>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between shadow-[0_4px_24px_rgba(25,28,28,0.04)]">
+<div class="space-y-1">
+<p class="text-on-surface-variant text-sm font-medium">合計時間</p>
+<p class="text-4xl font-extrabold text-primary">28 <span class="text-lg font-bold">min</span></p>
+</div>
+<div class="h-12 w-px bg-outline-variant/30"></div>
+<div class="space-y-1 text-right">
+<p class="text-on-surface-variant text-sm font-medium">距離</p>
+<p class="text-4xl font-extrabold text-primary">2.4 <span class="text-lg font-bold">km</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">speed</span>
+<span class="text-xs font-bold uppercase tracking-wider">平均ペース</span>
+</div>
+<p class="text-xl font-bold text-on-surface">11'40"/km</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg space-y-3">
+<div class="flex items-center gap-2 text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">monitor_heart</span>
+<span class="text-xs font-bold uppercase tracking-wider">活動レベル</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-on-surface">普通</span>
+<div class="flex gap-1">
+<div class="w-1.5 h-4 rounded-full bg-secondary"></div>
+<div class="w-1.5 h-4 rounded-full bg-secondary"></div>
+<div class="w-1.5 h-4 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<div class="flex justify-between items-center text-sm text-on-surface-variant font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>開始: 10:15</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span>終了: 10:43</span>
+</div>
+</div>
+</section>
+<section class="bg-primary-fixed p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex gap-4 items-start relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-sm font-bold text-on-primary-fixed-variant flex items-center gap-2">
+                        Rovyの気分メモ
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</h3>
+<p class="text-on-primary-fixed font-medium leading-relaxed">
+                        今日は少し遠回りしたかったみたい。楽しいお散歩でした。
+                    </p>
+</div>
+</div>
+</section>
+<section class="bg-secondary-fixed p-6 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#f8faf9]/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<p class="text-on-secondary-fixed-variant font-medium leading-relaxed">
+                    無理のない範囲で、安定して歩けています。
+                </p>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full z-50 bg-[#f8faf9]/90 backdrop-blur-xl rounded-t-[1.5rem] border-t border-[#424845]/10 shadow-[0_-4px_24px_rgba(25,28,28,0.04)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">ホーム</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#88a096]/20 text-[#4c635a] rounded-[9999px] px-5 py-1.5 active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-bold">詳細</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">履歴</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] px-5 py-1.5 hover:text-[#8f4c30] transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] font-medium">通知</span>
+</a>
+</div>
+</nav>
+</body></html>
+
+
+<!-- 散歩の詳細 -->
+<!DOCTYPE html>
+
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#370e00",
+              "surface-container-highest": "#e1e3e2",
+              "surface-container": "#eceeed",
+              "primary-container": "#88a096",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#091f19",
+              "primary-fixed-dim": "#b3ccc1",
+              "on-tertiary-fixed-variant": "#3b4a44",
+              "secondary-fixed": "#ffdbce",
+              "surface-tint": "#4c635a",
+              "surface-bright": "#f8faf9",
+              "on-secondary-container": "#773a1f",
+              "on-tertiary-fixed": "#101e19",
+              "primary": "#4c635a",
+              "tertiary-fixed": "#d5e7de",
+              "on-surface": "#191c1c",
+              "secondary": "#8f4c30",
+              "tertiary": "#52625b",
+              "surface-dim": "#d8dada",
+              "background": "#f8faf9",
+              "primary-fixed": "#cfe8dd",
+              "tertiary-container": "#8e9e96",
+              "on-background": "#191c1c",
+              "on-secondary-fixed-variant": "#72351b",
+              "inverse-surface": "#2e3131",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#ffb598",
+              "secondary-container": "#fda684",
+              "inverse-on-surface": "#eff1f0",
+              "on-primary-container": "#21372f",
+              "on-tertiary-container": "#263530",
+              "outline-variant": "#c2c8c4",
+              "surface-container-low": "#f2f4f3",
+              "surface-container-high": "#e6e9e8",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "outline": "#727875",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#354b43",
+              "on-surface-variant": "#424845",
+              "tertiary-fixed-dim": "#b9cac2",
+              "surface-variant": "#e1e3e2",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b3ccc1",
+              "surface": "#f8faf9"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8faf9;
+        color: #191c1c;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="ユーザープロフィール" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling elderly Japanese woman with soft lighting and natural home background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhlBxM1ssHfKRQJ06EzpghULDwFaGPbAADnWkKBAArEyJMj6BCUt40I_CzeIPP_e3NychMlw98fZ0maQWkG8mKbUx5l8FFy62jZuVeWqrmTpMgp5LBJUV83N0_dYrF-VuiuuthkT2raXdb_dnIbaN7HcKxa_ZOEQXkc3DQ-_5IKupHC7N4voU3_gGhI6Wb0VZZFmNKRQB1YC7muuhNX67bxIdumYKBu2_7bGpoWlaN3UJBp0wqf-2Ola-c80q2A-3M4_2SknpmGNkO"/>
+</div>
+<span class="text-[#4c635a] dark:text-[#b3ccc1] font-bold text-xl tracking-tight">Rovy Family</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e1e3e2] dark:hover:bg-slate-800 transition-colors Active: opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[#424845]" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Screen Title Section -->
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-bold tracking-tight text-on-surface">通知</h1>
+<p class="text-on-surface-variant body-lg">今日のロビーの様子を確認しましょう</p>
+</div>
+<!-- Gentle Alert (Bento style) -->
+<section class="bg-secondary-container/20 rounded-lg p-6 flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-on-secondary-container">今日のお知らせ</h3>
+<p class="text-on-secondary-container/90">まだ今日の散歩が記録されていません。(16:00)</p>
+</div>
+</section>
+<!-- Notification List -->
+<section class="space-y-4">
+<h2 class="text-xl font-semibold text-on-surface px-1">最近のアクティビティ</h2>
+<div class="space-y-3">
+<!-- Status Update: Started -->
+<div class="bg-surface-container-low p-5 rounded-lg flex items-center gap-4 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="directions_walk">directions_walk</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium">散歩を開始しました</p>
+<p class="text-on-surface-variant text-sm">今日 10:15</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Status Update: Returned -->
+<div class="bg-surface-container-low p-5 rounded-lg flex items-center gap-4 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-[#d1e9cf] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#2d4d2b]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium">無事に帰宅しました</p>
+<p class="text-on-surface-variant text-sm">今日 10:43</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Status Update: Duration -->
+<div class="bg-surface-container-low p-5 rounded-lg flex items-center gap-4 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium">短い散歩を完了しました</p>
+<p class="text-on-surface-variant text-sm">15 分間の活動</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Settings Section -->
+<section class="space-y-4">
+<h2 class="text-xl font-semibold text-on-surface px-1">設定</h2>
+<div class="bg-surface-container-lowest rounded-lg divide-y divide-outline-variant/10 shadow-sm">
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications_active">notifications_active</span>
+<div>
+<p class="text-on-surface font-medium">通知を有効にする</p>
+<p class="text-on-surface-variant text-sm">大切なアップデートをリアルタイムで受信</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-white rounded-full ml-auto"></div>
+</div>
+</div>
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="share">share</span>
+<div>
+<p class="text-on-surface font-medium">家族との共有設定</p>
+<p class="text-on-surface-variant text-sm">見守りメンバーの管理</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[1.5rem] bg-[#f8faf9]/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-[#424845]/10 shadow-[0_-4px_24px_rgba(25,28,28,0.04)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors Active: scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[1rem] font-medium">ホーム</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors Active: scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[1rem] font-medium">詳細</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424845] dark:text-slate-400 px-5 py-1.5 hover:text-[#8f4c30] transition-colors Active: scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[1rem] font-medium">履歴</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#88a096]/20 text-[#4c635a] dark:text-[#b3ccc1] rounded-[9999px] px-5 py-1.5 Active: scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[1rem] font-medium">通知</span>
+</a>
+</div>
+</nav>
+</body></html>
